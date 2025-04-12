@@ -65,6 +65,7 @@ export default function CollectionDetail() {
 					</div>
 					{items.meta && (
 						<Paging
+							totalItems={items.meta?.total}
 							currentPage={Number(page)}
 							totalPages={items.meta?.last_page}
 							urlGenerator={(_page: number) =>

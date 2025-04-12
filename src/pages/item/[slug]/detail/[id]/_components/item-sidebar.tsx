@@ -22,7 +22,7 @@ export default function ItemSidebar({ item }: Props) {
 				params.tab != 'changelog' && <ChangelogPreview item={item} />}
 			<ItemTerms
 				title={__('Tags')}
-				terms={item.terms.filter((i) => i.taxonomy === 'fv_tag')}
+				terms={item.terms?.filter((i) => i.taxonomy === 'fv_tag')}
 			/>
 			<ItemTerms
 				title={__('Browsers')}
@@ -32,19 +32,19 @@ export default function ItemSidebar({ item }: Props) {
 			/>
 			<ItemTerms
 				title={__('Compatible With')}
-				terms={item.terms.filter(
+				terms={item.terms?.filter(
 					(i) => i.taxonomy === 'fv_compatible_with'
 				)}
 			/>
 			<ItemTerms
 				title={__('Included Files')}
-				terms={item.terms.filter(
+				terms={item.terms?.filter(
 					(i) => i.taxonomy === 'files_included'
 				)}
 			/>
 			<ItemTerms
 				title={__('Software Versions')}
-				terms={item.terms.filter(
+				terms={item.terms?.filter(
 					(i) => i.taxonomy === 'software_version'
 				)}
 			/>

@@ -26,6 +26,7 @@ import ItemDemoContents from './_components/item-demo-contents';
 import ItemDescription from './_components/item-description';
 import ItemRequestUpdate from './_components/item-request-update';
 import ItemSidebar from './_components/item-sidebar';
+import useActivation from '@/hooks/use-activation';
 type IconProps = React.HTMLAttributes<SVGElement>;
 
 type TabRecordType = {
@@ -39,6 +40,7 @@ type TabRecordType = {
 export type DetailTabType = TabRecordType[];
 export default function Component() {
 	const params = useParams('/item/:slug/detail/:id/:tab?');
+		const { activated, active } = useActivation();
 	const { data, isError, isLoading, isFetching } = useApiFetch<TPostItem>(
 		'item/detail',
 		{
@@ -89,7 +91,7 @@ export default function Component() {
 				label: __('Request Update'),
 				icon: MessageSquareDiff,
 				el: () => <ItemRequestUpdate item={data} />,
-				enabled: data.media_count ? data.media_count > 0 : false
+				enabled: activated && active
 			},
 			{
 				id: 'support',
@@ -101,7 +103,7 @@ export default function Component() {
 					: false
 			}
 		].filter((item) => item.enabled ?? true);
-	}, [data]);
+	}, [activated, active, data]);
 	return (
 		<AppPageShell
 			title={data?.title ?? __('Item Detail')}

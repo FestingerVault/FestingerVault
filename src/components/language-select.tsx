@@ -41,7 +41,6 @@ export default function LanguageSelector() {
 				<Command>
 					<CommandList>
 						<CommandGroup>
-
 							{languages.map((lang) => (
 								<CommandItem
 									key={lang.code}
@@ -55,7 +54,9 @@ export default function LanguageSelector() {
 										setOpen(false);
 									}}
 								>
-									{value===lang.code?lang.native:lang.name}
+									{value === lang.code
+										? lang.native
+										: lang.name}
 									<CheckIcon
 										className={cn(
 											'ml-auto h-4 w-4',

@@ -289,12 +289,12 @@ class Helper
 			'/'
 		);
 	}
-	public static function get_available_languages(){
-		$file=Plugin::p_dir("languages/available-languages.json");
-		$languages=[];
-		if(file_exists($file) && is_readable($file)){
-			$languages=json_decode(file_get_contents($file),true);
-
+	public static function get_available_languages()
+	{
+		$file = Plugin::p_dir('languages/available-languages.json');
+		$languages = [];
+		if (file_exists($file) && is_readable($file)) {
+			$languages = json_decode(file_get_contents($file), true);
 		}
 		sort($languages);
 		return $languages;

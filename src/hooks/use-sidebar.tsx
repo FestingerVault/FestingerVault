@@ -88,12 +88,10 @@ export default function useSidebar() {
 				{
 					label: __('Popular Themes'),
 					icon: Palette,
-					disabled: !activated || !active,
 					href: '/popular/theme'
 				},
 				{
 					label: __('Popular Plugins'),
-					disabled: !activated || !active,
 					icon: ToyBrick,
 					href: '/popular/plugin'
 				}
@@ -108,25 +106,21 @@ export default function useSidebar() {
 				{
 					label: __('Themes'),
 					icon: Palette,
-					disabled: !activated || !active,
 					href: '/item/theme'
 				},
 				{
 					label: __('Plugins'),
 					icon: ToyBrick,
-					disabled: !activated || !active,
 					href: '/item/plugin'
 				},
 				{
 					label: __('Template Kits'),
 					icon: Drum,
-					disabled: !activated || !active,
 					href: '/item/template-kit'
 				},
 				{
 					label: __('Requests'),
 					icon: Library,
-					disabled: !activated || !active,
 					href: '/requests'
 				},
 				{
@@ -175,7 +169,6 @@ export default function useSidebar() {
 					label: __('Settings'),
 					icon: Settings,
 
-					disabled: !activated || !active,
 					href: '/settings'
 				}
 			]
