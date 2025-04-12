@@ -40,3 +40,7 @@ If you encounter any issues or have any questions, feel free to open an issue in
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Disclaimer
+
+The WordPress® trademark is the intellectual property of the WordPress Foundation, and the Woo® and WooCommerce® trademarks are the intellectual property of WooCommerce, Inc. Uses of the WordPress®, Woo®, and WooCommerce® names in this website are for identification purposes only and do not imply an endorsement by WordPress Foundation or WooCommerce, Inc. Festinger Vault is not endorsed or owned by, or affiliated with, the WordPress Foundation or WooCommerce, Inc.
