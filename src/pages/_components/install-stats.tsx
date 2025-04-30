@@ -31,13 +31,13 @@ export default function InstallStats({ className }: Props) {
 				name: 'theme',
 				label: __('Themes'),
 				value: themes?.length,
-				color: 'hsl(var(--chart-1))'
+				color: 'var(--chart-1)'
 			},
 			{
 				name: 'plugin',
 				label: __('Plugins'),
 				value: plugins?.length,
-				color: 'hsl(var(--chart-2))'
+				color: 'var(--chart-2)'
 			}
 		],
 		[plugins, themes]

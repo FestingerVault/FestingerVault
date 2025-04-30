@@ -81,7 +81,7 @@ export function StackedBarChart({ data }: StackedBarChartProps) {
 							width={item.width}
 							height={height}
 							fill={item.color}
-							className="dura transition-all"
+							className="duration-400 transition-all"
 							tabIndex={-1}
 						/>
 					);

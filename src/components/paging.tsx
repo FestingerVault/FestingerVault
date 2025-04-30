@@ -30,14 +30,7 @@ export default function Paging({
 		return generatePaginationArray(currentPage, totalPages);
 	}, [currentPage, totalPages]);
 	if (totalPages < 2) {
-		return totalItems > 0 ? (
-			<div className="text-center text-muted-foreground">
-				{sprintf(
-					_n('%s item found', '%s items found', totalItems),
-					totalItems?.toLocaleString()
-				)}{' '}
-			</div>
-		) : null;
+		return null
 	}
 
 	return (

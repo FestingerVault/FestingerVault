@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/card';
 import useApiFetch from '@/hooks/use-api-fetch';
 import useDataCollection, { FilterOption } from '@/hooks/use-data-collection';
 import useGetTerms from '@/hooks/use-get-terms';
-import { __ } from '@/lib/i18n';
+import { __, _n } from '@/lib/i18n';
 import { SlugToItemType } from '@/lib/type-to-slug';
 import { cn } from '@/lib/utils';
 import PostGridItem, {
@@ -24,20 +24,24 @@ import { z } from 'zod';
 
 const sort_items: ReturnType<typeof useDataCollection>['sort'] = [
 	{
-		label: __('Added'),
-		value: 'added'
-	},
-	{
 		label: __('Updated'),
 		value: 'updated'
+	},
+	{
+		label: __('Popularity'),
+		value: 'popularity'
+	},
+	{
+		label: __('Views'),
+		value: 'views'
 	},
 	{
 		label: __('Title'),
 		value: 'title'
 	},
 	{
-		label: __('Popularity'),
-		value: 'popularity'
+		label: __('Added'),
+		value: 'added'
 	}
 ];
 const path = '/item/:slug/:page?';
@@ -410,7 +414,18 @@ export default function Component() {
 			{data && (
 				<>
 					<FilterBar collection={dataCollection} />
-
+					{data.meta && (
+						<div className="text-center text-muted-foreground">
+							{sprintf(
+								_n(
+									'%s item found',
+									'%s items found',
+									data.meta?.total
+								),
+								data.meta?.total?.toLocaleString()
+							)}
+						</div>
+					)}
 					<div
 						className={cn([
 							'grid grid-cols-1 gap-5 md:grid-cols-3 lg:gap-7'
@@ -427,6 +442,18 @@ export default function Component() {
 							<NoSearchResultFound />
 						)}
 					</div>
+					{data.meta && (
+						<div className="text-center text-muted-foreground">
+							{sprintf(
+								_n(
+									'%s item found',
+									'%s items found',
+									data.meta?.total
+								),
+								data.meta?.total?.toLocaleString()
+							)}
+						</div>
+					)}
 					{data.meta && (
 						<Paging
 							currentPage={Number(page)}
