@@ -30,7 +30,7 @@ export default function Paging({
 		return generatePaginationArray(currentPage, totalPages);
 	}, [currentPage, totalPages]);
 	if (totalPages < 2) {
-		return null
+		return null;
 	}
 
 	return (

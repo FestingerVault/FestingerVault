@@ -17,6 +17,7 @@ import {
 import { Card, CardContent } from '../ui/card';
 import { Skeleton } from '../ui/skeleton';
 import Notices from './notices';
+import LanguageSelector from '../language-select';
 type BreadCrumbType = {
 	label: string;
 	href?: string;
@@ -146,7 +147,7 @@ function PageHeader({ title, description }: PageHeaderProps) {
 				<ModeToggle />
 				<BulkAction />
 				<DownloadManager />
-				{/* <LanguageSelector /> */}
+				{<LanguageSelector />}
 			</div>
 			<div className="flex flex-1 flex-col gap-1">
 				<h1 className="font-heading text-2xl font-bold">{title}</h1>

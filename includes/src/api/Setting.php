@@ -18,6 +18,9 @@ class Setting extends ApiBase
 				'callback' => [$this, 'get_roles'],
 				'permission_callback' => [$this, 'user_is_adminstrator'],
 			],
+			'language' => [
+				'callback' => [$this, 'get_language'],
+			],
 			'update' => [
 				'callback' => [$this, 'update_setting'],
 				'permission_callback' => [$this, 'user_is_adminstrator'],
@@ -74,6 +77,7 @@ class Setting extends ApiBase
 							return is_bool($param);
 						},
 					],
+
 					'roles' => [
 						'required' => true,
 						'validate_callback' => function (
@@ -118,5 +122,16 @@ class Setting extends ApiBase
 	public function get_roles()
 	{
 		return Helper::get_roles();
+	}
+	function get_language(\WP_REST_Request $request)
+	{
+		$language = $request->get_param('lang');
+		\update_user_meta(
+			get_current_user_id(),
+			Constants::SLUG . '_lang',
+			$language
+		);
+
+		return [];
 	}
 }

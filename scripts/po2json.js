@@ -14,6 +14,7 @@ files.forEach(file => {
     domain: process.env.TEXTDOMAIN,
     "fallback-to-msgid": false,
   });
+	const filename=
   fs.writeFileSync(
     path.join(
       "languages",
@@ -24,7 +25,7 @@ files.forEach(file => {
   // fs.writeFileSync(
   //   path.join(
   //     "languages",
-  //     `${jsonData.locale_data[process.env.TEXTDOMAIN][""].lang}.json`,
+  //     `${jsonData.locale_data[process.env.TEXTDOMAIN][""].lang.replace("_","-")}.json`,
   //   ),
   //   JSON.stringify(jsonData),
   // );

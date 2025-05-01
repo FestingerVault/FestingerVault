@@ -178,16 +178,42 @@ class Admin
 				'moment',
 			],
 		]);
-		wp_localize_script(
-			Constants::SLUG . '-script',
-			'AVAILABLE_I18NS',
-			Helper::get_available_languages()
+		$locale = \get_user_meta(
+			\get_current_user_id(),
+			Constants::SLUG . '_lang',
+			true
 		);
+		if (!$locale) {
+			\update_user_meta(
+				\get_current_user_id(),
+				Constants::SLUG . '_lang',
+				'en-US'
+			);
+		}
+		wp_localize_script(Constants::SLUG . '-script', 'AVAILABLE_I18NS', [
+			'locale' => $locale,
+			'available' => Helper::get_available_languages(),
+		]);
 		wp_set_script_translations(
 			Constants::SLUG . '-script',
 			Constants::TEXTDOMAIN,
 			Plugin::p_dir('languages')
 		);
+		$lang_content = Helper::get_langauge_file(
+			str_replace('-', '_', $locale)
+		);
+		if ($lang_content) {
+			wp_add_inline_script(
+				Constants::SLUG . '-script',
+				'( function( domain, translations ) {var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;	localeData[""].domain = domain;	wp.i18n.setLocaleData( localeData, domain );} )("' .
+					Constants::TEXTDOMAIN .
+					'",' .
+					json_encode($lang_content) .
+					');',
+				'after'
+			);
+		}
+		//restore_previous_locale();
 	}
 
 	public static function get_instance()

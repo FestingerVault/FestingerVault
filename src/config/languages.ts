@@ -6,7 +6,7 @@ export const languages = [
 		name: 'English',
 		native: 'English'
 	},
-	...window.AVAILABLE_I18NS.map((lang) => {
+	...window.AVAILABLE_I18NS.available.map((lang) => {
 		const language = getByTag(lang);
 		return {
 			code: lang,

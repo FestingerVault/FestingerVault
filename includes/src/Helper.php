@@ -289,6 +289,13 @@ class Helper
 			'/'
 		);
 	}
+	public static function get_langauge_file($language){
+		$file = Plugin::p_dir("languages/".Constants::TEXTDOMAIN."-{$language}-".Constants::SLUG."-script.json");
+		if(\file_exists($file) && \is_readable($file)){
+			return json_decode(\file_get_contents($file));
+		}
+		return false;
+	}
 	public static function get_available_languages()
 	{
 		$file = Plugin::p_dir('languages/available-languages.json');
