@@ -1,7 +1,6 @@
 import { AppPageShell } from '@/components/body/page-shell';
 import FilterBar from '@/components/filter/filter-bar';
 import Paging from '@/components/paging';
-import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import useApiFetch from '@/hooks/use-api-fetch';
 import useDataCollection, { FilterOption } from '@/hooks/use-data-collection';
@@ -19,7 +18,6 @@ import { useEffect, useMemo } from '@wordpress/element';
 import { decodeEntities } from '@wordpress/html-entities';
 import { sprintf } from '@wordpress/i18n';
 import { SearchX } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { z } from 'zod';
 
 const sort_items: ReturnType<typeof useDataCollection>['sort'] = [
@@ -50,7 +48,6 @@ const paramsSchema = z.object({
 	page: z.coerce.number().default(1)
 });
 function NoSearchResultFound() {
-	const params = useParams(path);
 	return (
 		<Card className="col-span-1  md:col-span-3">
 			<div className="flex flex-col items-center gap-4 px-4 py-10 sm:px-6">
@@ -58,18 +55,8 @@ function NoSearchResultFound() {
 					<SearchX size={48} />
 				</div>
 				<div className="text-center text-sm italic text-muted-foreground">
-					{__(
-						"We couldn't find the item you're looking for, you can make a wish request"
-					)}
+					{__("We couldn't find the item you're looking for")}
 				</div>
-				<Button
-					asChild
-					variant="outline"
-				>
-					<Link to={`/requests?type=${params.slug}`}>
-						{__('Add Request')}
-					</Link>
-				</Button>
 			</div>
 		</Card>
 	);
@@ -347,7 +334,7 @@ export default function Component() {
 							id: 'add_content',
 							label: __('Additional Content'),
 							isMulti: false,
-							enabled: item_type.slug != 'template-kit',
+							enabled: item_type.slug != 'template-kit' && item_type.slug!="request",
 							options: [
 								{
 									label: __('Yes'),
@@ -414,7 +401,7 @@ export default function Component() {
 			{data && (
 				<>
 					<FilterBar collection={dataCollection} />
-					{data.meta && (
+					{data.meta && data.meta?.total>0 && (
 						<div className="text-center text-muted-foreground">
 							{sprintf(
 								_n(
@@ -442,7 +429,7 @@ export default function Component() {
 							<NoSearchResultFound />
 						)}
 					</div>
-					{data.meta && (
+					{data.meta && data.meta?.total>0 && (
 						<div className="text-center text-muted-foreground">
 							{sprintf(
 								_n(

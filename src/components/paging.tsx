@@ -14,7 +14,7 @@ import { sprintf } from '@wordpress/i18n';
 type PagingProps = {
 	totalPages: number;
 	currentPage: number;
-	totalItems: number;
+	totalItems?: number;
 
 	urlGenerator: (path: string | number) => string;
 	className?: string;

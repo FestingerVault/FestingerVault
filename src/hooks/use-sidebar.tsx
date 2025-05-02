@@ -121,7 +121,7 @@ export default function useSidebar() {
 				{
 					label: __('Requests'),
 					icon: Library,
-					href: '/requests'
+					href: '/item/request'
 				},
 				{
 					label: __('Collections'),

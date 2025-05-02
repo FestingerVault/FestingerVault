@@ -31,5 +31,13 @@ export const item_types: Array<TItemType> = [
 		label: __('Template Kits'),
 		label_singular: __('Template Kit'),
 		description: __('Template Kits')
+	},
+	{
+		slug: 'request',
+		type: 'request',
+		label: __('Requests'),
+		label_singular: __('Request'),
+		description: __('Requests')
 	}
+
 ];

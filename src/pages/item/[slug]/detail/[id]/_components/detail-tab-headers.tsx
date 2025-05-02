@@ -24,7 +24,7 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 			<div className="flex flex-col gap-4 lg:flex-row lg:justify-between">
 				<div className="flex flex-col gap-4 sm:flex-row">
 					<InstallButton item={item} />
-					<Button
+					{item.preview ?? item.product_url?<Button
 						asChild
 						className="flex gap-2"
 						variant="outline"
@@ -38,7 +38,7 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 							<span>{__('Preview')}</span>
 							<ExternalLink size={16} />
 						</a>
-					</Button>
+					</Button>:null}
 					{siteConfig.provider && (
 						<Button
 							asChild
@@ -57,6 +57,7 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 						</Button>
 					)}
 				</div>
+				{item.type!=="request"?
 				<div className="flex gap-4">
 					<CollectionButton item={item}>
 						<Button
@@ -67,13 +68,7 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 						</Button>
 					</CollectionButton>
 					<BulkButton item={item} />
-					{/* <Button
-						size="icon"
-						variant="outline"
-					>
-						<EllipsisVertical size={16} />
-					</Button> */}
-				</div>
+				</div>:null}
 			</div>
 			<div className="flex flex-row">
 				{tabs.map(({ id, label, external, icon: Icon }) => (

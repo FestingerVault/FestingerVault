@@ -66,6 +66,9 @@ export default function InstallButton({ item, media, size, variant }: Props) {
 				.catch(() => setIsPending(false));
 		}
 	}
+	if(item.type==="request"){
+		return null;
+	}
 	return (
 		can_install &&
 		can_download && (

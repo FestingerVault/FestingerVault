@@ -10,7 +10,7 @@ type Props = {
 
 export default function ItemTerms({ title, terms }: Props) {
 	return (
-		terms.length > 0 && (
+		terms.length > 0 ? (
 			<Card>
 				<CardHeader className="flex flex-row items-center justify-between border-b">
 					{title}
@@ -28,6 +28,6 @@ export default function ItemTerms({ title, terms }: Props) {
 					))}
 				</CardContent>
 			</Card>
-		)
+		):null
 	);
 }

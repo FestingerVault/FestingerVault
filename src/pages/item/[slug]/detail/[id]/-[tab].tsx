@@ -91,7 +91,7 @@ export default function Component() {
 				label: __('Request Update'),
 				icon: MessageSquareDiff,
 				el: () => <ItemRequestUpdate item={data} />,
-				enabled: activated && active
+				enabled: activated && active && data.type!="request"
 			},
 			{
 				id: 'support',

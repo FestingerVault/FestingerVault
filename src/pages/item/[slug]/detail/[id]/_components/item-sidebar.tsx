@@ -19,7 +19,7 @@ export default function ItemSidebar({ item }: Props) {
 			<ItemDetail item={item} />
 			{item.media_count &&
 				item.media_count > 0 &&
-				params.tab != 'changelog' && <ChangelogPreview item={item} />}
+				params.tab != 'changelog' ? <ChangelogPreview item={item} />:null}
 			<ItemTerms
 				title={__('Tags')}
 				terms={item.terms?.filter((i) => i.taxonomy === 'fv_tag')}

@@ -8,6 +8,9 @@ type Props = {
 	item: TPostItem;
 };
 export default function VirusTotalScan({ item }: Props) {
+	if(item.type==="request"){
+		return null;
+	}
 	return (
 		<Card>
 			<CardHeader className="flex flex-row items-center justify-between border-b">

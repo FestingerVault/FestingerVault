@@ -16,10 +16,15 @@ type Row = {
 export default function ItemDetail({ item }: Props) {
 	const items = useMemo<Row[]>(
 		() => [
-			{ label: __('Version'), el: () => item.version },
+			{
+				label: __('Version'),
+				el: () => item.version,
+				enabled: item.type !== 'request'
+			},
 			{
 				label: __('Slug'),
-				el: () => item.slugs[0]
+				el: () => item.slugs[0],
+				enabled: item.type !== 'request'
 			},
 			{ label: __('Status'), el: () => 'Functional' },
 			{
