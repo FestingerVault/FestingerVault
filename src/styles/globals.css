@@ -1,57 +1,7 @@
+@import "./theme.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @layer base {
-
-	:root{
-		--font-sans:"Inter";
-		--font-heading:"Bricolage Grotesque";
-	}
-    :root {
-        --background:#000000;
-        --foreground: #09090b;
-        --card:#000000;
-        --card-foreground: #09090b;
-        --popover:#000000;
-        --popover-foreground: #09090b;
-        --primary: #18181b;
-        --primary-foreground: #fafafa;
-        --secondary: #f4f4f5;
-        --secondary-foreground: #18181b;
-        --muted: #f4f4f5;
-        --muted-foreground: 240 3.8% 46.1%;
-        --accent: #f4f4f5;
-        --accent-foreground: #18181b;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: #fafafa;
-        --border: #e4e4e7;
-        --input: #e4e4e7;
-        --ring: #18181b;
-        --radius: 0.9rem;
-    }
-
-    :root[class~="dark"] {
-        --background: 0 0% 0%;
-        --foreground: #fafafa;
-        --card: #09090b;
-        --card-foreground: #fafafa;
-        --popover: #09090b;
-        --popover-foreground: #fafafa;
-        --primary: #fafafa;
-        --primary-foreground: #18181b;
-        --secondary: #27272a;
-        --secondary-foreground: #fafafa;
-        --muted: #27272a;
-        --muted-foreground: #a1a1aa;
-        --accent: #27272a;
-        --accent-foreground: #fafafa;
-        --destructive: 0 60.8% 40.6%;
-        --destructive-foreground: #fafafa;
-        --border: #27272a;
-        --input: #27272a;
-        --ring: 240 4.9% 83.9%;
-    }
-} */
 @layer base {
 	:root {
 		--font-sans: 'Inter';
@@ -61,49 +11,7 @@
 		--chart-2: #2a9d90;
 
 	}
-	.light,
-	:root {
-		--background: #ffffff;
-		--foreground: #09090b;
-		--card: #ffffff;
-		--card-foreground: #09090b;
-		--popover: #ffffff;
-		--popover-foreground: #09090b;
-		--primary: #e11d48;
-		--primary-foreground: #fffafa;
-		--secondary: #f4f4f5;
-		--secondary-foreground: #18181b;
-		--muted: #f4f4f5;
-		--muted-foreground: #6e6e77;
-		--accent: #f4f4f5;
-		--accent-foreground: #18181b;
-		--destructive: #dc2828;
-		--destructive-foreground: #fafafa;
-		--border: #f1f1f1;
-		--input: #e4e4e7;
-		--ring: #e11d48;
-	}
-	.dark {
-		--background: #0d0d0d;
-		--foreground: #fafafa;
-		--card: #111111;
-		--card-foreground: #fafafa;
-		--popover: #111111;
-		--popover-foreground: #fafafa;
-		--primary: #e11d48;
-		--primary-foreground: #fffafa;
-		--secondary: #f4f4f5;
-		--secondary-foreground: #18181b;
-		--muted: #27272a;
-		--muted-foreground: #a1a1aa;
-		--accent: #27272a;
-		--accent-foreground: #fafafa;
-		--destructive: #dc2828;
-		--destructive-foreground: #fafafa;
-		--border: #1b1b1b;
-		--input: #27272a;
-		--ring: #2563eb;
-	}
+
 }
 @layer base {
 	* {

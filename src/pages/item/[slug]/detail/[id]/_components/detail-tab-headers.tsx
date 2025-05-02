@@ -80,8 +80,8 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 					<Slot
 						key={id}
 						className={cn(
-							'rounded-none border-b-2 border-transparent px-6 py-4 text-sm transition-colors hover:border-b-blue-600',
-							id === active && 'border-b-blue-800'
+							'rounded-none border-b-2 border-transparent px-6 py-4 text-sm transition-colors hover:border-b-primary',
+							id === active && 'border-b-primary'
 						)}
 					>
 						{external ? (

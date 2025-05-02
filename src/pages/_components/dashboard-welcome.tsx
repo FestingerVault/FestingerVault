@@ -36,7 +36,7 @@ export default function DashboardWelcome({ className }: Props) {
 									'Unlimited themes, plugins and template kits,'
 								)}
 							</span>
-							<span className="text-blue-500">
+							<span className="text-primary">
 								{__('all in one place')}
 							</span>
 						</h2>
@@ -53,7 +53,7 @@ export default function DashboardWelcome({ className }: Props) {
 				<a
 					href="https://festingervault.com/beta-feedback"
 					target="_blank"
-					className="border-b border-dashed border-blue-500 text-sm text-blue-500"
+					className="border-b border-dashed border-primary text-sm text-primary"
 					rel="noreferrer"
 				>
 					{__('Get Started')}

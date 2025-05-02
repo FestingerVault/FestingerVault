@@ -71,7 +71,7 @@ export default function AvailableUpdates({ className }: Props) {
 			<CardFooter className="justify-center border-t border-border text-center">
 				<Link
 					to="/updates"
-					className="border-b border-dashed border-blue-500 text-sm text-blue-500"
+					className="border-b border-dashed border-primary text-sm text-primary"
 				>
 					{__('View All Updates')}
 				</Link>

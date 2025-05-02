@@ -183,6 +183,7 @@ class Admin
 			Constants::SLUG . '_lang',
 			true
 		);
+
 		if (!$locale) {
 			\update_user_meta(
 				\get_current_user_id(),
@@ -194,11 +195,6 @@ class Admin
 			'locale' => $locale,
 			'available' => Helper::get_available_languages(),
 		]);
-		wp_set_script_translations(
-			Constants::SLUG . '-script',
-			Constants::TEXTDOMAIN,
-			Plugin::p_dir('languages')
-		);
 		$lang_content = Helper::get_langauge_file(
 			str_replace('-', '_', $locale)
 		);
@@ -213,7 +209,6 @@ class Admin
 				'after'
 			);
 		}
-		//restore_previous_locale();
 	}
 
 	public static function get_instance()

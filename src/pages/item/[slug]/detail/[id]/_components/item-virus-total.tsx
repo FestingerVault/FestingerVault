@@ -16,7 +16,7 @@ export default function VirusTotalScan({ item }: Props) {
 					<a
 						href={`https://www.virustotal.com/gui/file/${item.virus_total.hash}`}
 						target="_blank"
-						className="border-b border-dashed border-blue-500 text-sm text-blue-500"
+						className="border-b border-dashed border-primary text-sm text-primary"
 						rel="noreferrer"
 					>
 						{__('View Detail')}

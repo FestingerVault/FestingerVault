@@ -21,7 +21,7 @@ export default function Announcements({ className }: Props) {
 				<a
 					href="https://meta.festingervault.com/c/announcements/11"
 					target="_blank"
-					className="border-b border-dashed border-blue-500 text-sm text-blue-500"
+					className="border-b border-dashed border-primary text-sm text-primary"
 					rel="noreferrer"
 				>
 					{__('View All')}

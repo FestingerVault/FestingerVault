@@ -81,7 +81,7 @@ export default function ChangelogPreview({ item }: Props) {
 					<Link
 						to="/item/:slug/detail/:id/:tab?"
 						params={{ ...params, tab: 'changelog' }}
-						className="border-b border-dashed border-blue-500 text-sm text-blue-500"
+						className="border-b border-dashed border-primary text-sm text-primary"
 					>
 						{__('Changelog')}
 					</Link>
