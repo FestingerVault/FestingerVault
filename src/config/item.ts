@@ -39,5 +39,4 @@ export const item_types: Array<TItemType> = [
 		label_singular: __('Request'),
 		description: __('Requests')
 	}
-
 ];

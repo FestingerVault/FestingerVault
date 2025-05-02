@@ -35,3 +35,6 @@
 		@apply whitespace-pre-wrap;
 	}
 }
+.ais-Hits-list {
+	@apply flex flex-col gap-4;
+}

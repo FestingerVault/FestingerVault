@@ -334,7 +334,9 @@ export default function Component() {
 							id: 'add_content',
 							label: __('Additional Content'),
 							isMulti: false,
-							enabled: item_type.slug != 'template-kit' && item_type.slug!="request",
+							enabled:
+								item_type.slug != 'template-kit' &&
+								item_type.slug != 'request',
 							options: [
 								{
 									label: __('Yes'),
@@ -401,7 +403,7 @@ export default function Component() {
 			{data && (
 				<>
 					<FilterBar collection={dataCollection} />
-					{data.meta && data.meta?.total>0 && (
+					{data.meta && data.meta?.total > 0 && (
 						<div className="text-center text-muted-foreground">
 							{sprintf(
 								_n(
@@ -429,7 +431,7 @@ export default function Component() {
 							<NoSearchResultFound />
 						)}
 					</div>
-					{data.meta && data.meta?.total>0 && (
+					{data.meta && data.meta?.total > 0 && (
 						<div className="text-center text-muted-foreground">
 							{sprintf(
 								_n(

@@ -24,21 +24,23 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 			<div className="flex flex-col gap-4 lg:flex-row lg:justify-between">
 				<div className="flex flex-col gap-4 sm:flex-row">
 					<InstallButton item={item} />
-					{item.preview ?? item.product_url?<Button
-						asChild
-						className="flex gap-2"
-						variant="outline"
-						size="default"
-					>
-						<a
-							href={item.preview ?? item.product_url}
-							target="_blank"
-							rel="noreferrer noopener"
+					{(item.preview ?? item.product_url) ? (
+						<Button
+							asChild
+							className="flex gap-2"
+							variant="outline"
+							size="default"
 						>
-							<span>{__('Preview')}</span>
-							<ExternalLink size={16} />
-						</a>
-					</Button>:null}
+							<a
+								href={item.preview ?? item.product_url}
+								target="_blank"
+								rel="noreferrer noopener"
+							>
+								<span>{__('Preview')}</span>
+								<ExternalLink size={16} />
+							</a>
+						</Button>
+					) : null}
 					{siteConfig.provider && (
 						<Button
 							asChild
@@ -57,18 +59,19 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 						</Button>
 					)}
 				</div>
-				{item.type!=="request"?
-				<div className="flex gap-4">
-					<CollectionButton item={item}>
-						<Button
-							size="icon"
-							variant="outline"
-						>
-							<Heart size={16} />
-						</Button>
-					</CollectionButton>
-					<BulkButton item={item} />
-				</div>:null}
+				{item.type !== 'request' ? (
+					<div className="flex gap-4">
+						<CollectionButton item={item}>
+							<Button
+								size="icon"
+								variant="outline"
+							>
+								<Heart size={16} />
+							</Button>
+						</CollectionButton>
+						<BulkButton item={item} />
+					</div>
+				) : null}
 			</div>
 			<div className="flex flex-row">
 				{tabs.map(({ id, label, external, icon: Icon }) => (

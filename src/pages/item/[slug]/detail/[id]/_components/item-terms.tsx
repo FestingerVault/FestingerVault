@@ -9,25 +9,23 @@ type Props = {
 };
 
 export default function ItemTerms({ title, terms }: Props) {
-	return (
-		terms.length > 0 ? (
-			<Card>
-				<CardHeader className="flex flex-row items-center justify-between border-b">
-					{title}
-				</CardHeader>
-				<CardContent className="flex flex-row flex-wrap gap-2">
-					{terms.map((term) => (
-						<div key={term.id}>
-							<Badge
-								className="text-nowrap"
-								variant="secondary"
-							>
-								{decodeEntities(term.name)}
-							</Badge>
-						</div>
-					))}
-				</CardContent>
-			</Card>
-		):null
-	);
+	return terms.length > 0 ? (
+		<Card>
+			<CardHeader className="flex flex-row items-center justify-between border-b">
+				{title}
+			</CardHeader>
+			<CardContent className="flex flex-row flex-wrap gap-2">
+				{terms.map((term) => (
+					<div key={term.id}>
+						<Badge
+							className="text-nowrap"
+							variant="secondary"
+						>
+							{decodeEntities(term.name)}
+						</Badge>
+					</div>
+				))}
+			</CardContent>
+		</Card>
+	) : null;
 }

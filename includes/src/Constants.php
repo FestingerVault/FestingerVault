@@ -18,9 +18,9 @@ class Constants
 
 	const ENGINE_URL = 'https://nengine.local';
 
-	const PLUGIN_DOWNLOAD_URL = 'https://raw.githubusercontent.com/FestingerVault/festingervault/dev-rc/festingervault.zip';
+	const PLUGIN_DOWNLOAD_URL = 'https://raw.githubusercontent.com/FestingerVault/festingervault/stable/festingervault.zip';
 
-	const PLUGIN_INFO_URL = 'https://raw.githubusercontent.com/FestingerVault/festingervault/dev-rc/info.json';
+	const PLUGIN_INFO_URL = 'https://raw.githubusercontent.com/FestingerVault/festingervault/stable/info.json';
 
 	const SETTING_KEY = 'festingervault_settings';
 	const AUTOUPDATE_SETTING_KEY = 'festingervault_autoupdates';

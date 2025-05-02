@@ -7,6 +7,7 @@ import BulkAction from '../bulk-action';
 import DownloadManager from '../download-manager';
 import LanguageSelector from '../language-select';
 import ModeToggle from '../mode-toggle';
+import TypeSenseSearch from '../typesense-search';
 import {
 	Breadcrumb,
 	BreadcrumbItem,
@@ -149,13 +150,16 @@ function PageHeader({ title, description }: PageHeaderProps) {
 				<DownloadManager />
 				{<LanguageSelector />}
 			</div>
-			<div className="flex flex-1 flex-col gap-1">
-				<h1 className="font-heading text-2xl font-bold">{title}</h1>
-				{description && (
-					<p className="max-w-xl text-muted-foreground">
-						{description}
-					</p>
-				)}
+			<div className="flex w-full flex-1 flex-col gap-4">
+				<TypeSenseSearch />
+				<div className="flex flex-1 flex-col gap-1">
+					<h1 className="font-heading text-2xl font-bold">{title}</h1>
+					{description && (
+						<p className="max-w-xl text-muted-foreground">
+							{description}
+						</p>
+					)}
+				</div>
 			</div>{' '}
 		</header>
 	);

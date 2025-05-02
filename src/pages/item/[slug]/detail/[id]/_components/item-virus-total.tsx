@@ -8,7 +8,7 @@ type Props = {
 	item: TPostItem;
 };
 export default function VirusTotalScan({ item }: Props) {
-	if(item.type==="request"){
+	if (item.type === 'request') {
 		return null;
 	}
 	return (
