@@ -28,8 +28,7 @@ const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
 				host: 'ydip76a9fqj1v3o2p-1.a1.typesense.net',
 				port: 443,
 				path: '',
-				protocol: 'https',
-
+				protocol: 'https'
 			}
 		],
 
