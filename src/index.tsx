@@ -1,5 +1,5 @@
-import '@/styles/globals.css';
 import '@/styles/custom.css';
+import '@/styles/globals.css';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 const container_id = 'app';

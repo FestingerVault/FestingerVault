@@ -1,3 +1,4 @@
+import { siteConfig } from '@/config/site';
 import { BulkProvider } from '@/hooks/use-bulk';
 import { DownloadProvider } from '@/hooks/use-download';
 import { NoticeProvider } from '@/hooks/use-notice';
@@ -8,7 +9,6 @@ import React from 'react';
 import { InstantSearch } from 'react-instantsearch';
 import TypesenseInstantSearchAdapter from 'typesense-instantsearch-adapter';
 import { Toaster } from './ui/sonner';
-import { siteConfig } from '@/config/site';
 
 type ProvidersProps = {
 	children: React.ReactNode;
