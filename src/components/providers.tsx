@@ -8,6 +8,7 @@ import React from 'react';
 import { InstantSearch } from 'react-instantsearch';
 import TypesenseInstantSearchAdapter from 'typesense-instantsearch-adapter';
 import { Toaster } from './ui/sonner';
+import { siteConfig } from '@/config/site';
 
 type ProvidersProps = {
 	children: React.ReactNode;
@@ -22,13 +23,13 @@ const queryClient = new QueryClient({
 });
 const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
 	server: {
-		apiKey: 'CuSXl29yHDDDBHzJkG1DoqogD007uW0L',
+		apiKey: siteConfig.typesense_api_key,
 		nodes: [
 			{
-				host: 'ydip76a9fqj1v3o2p-1.a1.typesense.net',
-				port: 443,
-				path: '',
-				protocol: 'https'
+				host: siteConfig.typesense_host,
+				port: siteConfig.typesense_port,
+				path: siteConfig.typesense_path,
+				protocol: siteConfig.typesense_protocol
 			}
 		],
 
@@ -46,7 +47,7 @@ export function Providers({ children }: ProvidersProps) {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<InstantSearch
-				indexName="engine/items"
+				indexName="engine_items"
 				searchClient={searchClient}
 			>
 				<NoticeProvider>

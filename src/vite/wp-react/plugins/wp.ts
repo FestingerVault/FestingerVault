@@ -125,7 +125,12 @@ export default function WPEnvProcess({
 				light: env.LOGO_LIGHT ?? null
 			},
 			whitelabel: parseInt(env.WHITELABEL) == 1,
-			provider: parseInt(env.WHITELABEL) != 1 ? env.MAIN_SITE : false
+			provider: parseInt(env.WHITELABEL) != 1 ? env.MAIN_SITE : false,
+			typesense_api_key:env.TYPESENSE_SEARCH_KEY,
+			typesense_host:env.TYPESENSE_HOST,
+			typesense_port:Number(env.TYPESENSE_PORT),
+			typesense_protocol:env.TYPESENSE_PROTOCOL,
+			typesense_path:env.TYPESENSE_PATH,
 		};
 		writeFileSync(
 			'./src/settings.json',

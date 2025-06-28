@@ -7,5 +7,10 @@
     "light": "https://raw.githubusercontent.com/FestingerVault/assets/refs/heads/main/logo-light.png"
   },
   "whitelabel": false,
-  "provider": "https://festingervault.com"
+  "provider": "https://festingervault.com",
+  "typesense_api_key": "24ZxPB9jCmvCV7KwAUAVphZp7xYIjlaN",
+  "typesense_host": "search.festingervault.com",
+  "typesense_port": 443,
+  "typesense_protocol": "https",
+  "typesense_path": ""
 }

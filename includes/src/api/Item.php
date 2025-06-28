@@ -2,7 +2,11 @@
 
 namespace FestingerVault\api;
 
-use FestingerVault\{Constants, Helper, Installer};
+use FestingerVault\{
+	Constants,
+	Helper,
+	Installer
+};
 
 class Item extends ApiBase
 {

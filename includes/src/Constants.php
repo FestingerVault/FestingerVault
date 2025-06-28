@@ -16,7 +16,7 @@ class Constants
 		'roles' => [],
 	];
 
-	const ENGINE_URL = 'https://nengine.local';
+	const ENGINE_URL = 'https://api.festingervault.com';
 
 	const PLUGIN_DOWNLOAD_URL = 'https://raw.githubusercontent.com/FestingerVault/festingervault/stable/festingervault.zip';
 
